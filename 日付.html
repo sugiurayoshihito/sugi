@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>test</title>
+</head>
+<body>
+<button>クリック</button>
+<p>ここに日付が表示されるよ</p>
+
+
+<script type="text/javascript">
+let doc = document
+let button = doc.getElementsByTagName('button')[0]
+let p = doc.getElementsByTagName('p')[0]
+
+button.addEventListener('click', dispTime)
+
+let d = new Date()
+let date = d.getDate()
+let month  = ["1","2","3","4","5","6","7","8","9","10","11","12"][d.getMonth()];
+let year = d.getFullYear()
+let time = year + '年' + month + '月' + date + '日'
+
+function dispTime() {
+  button.setAttribute('disabled', 'disabled')
+  let p_text = p.childNodes[0]
+  p_text.nodeValue = time
+}
+
+console.log(time)
+</script>
+</body>
+</html>
